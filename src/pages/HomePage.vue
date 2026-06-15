@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeroSection :profile="profile" show-featured-label />
+    <HeroSection :profile="profile" />
     <CaseStudyGrid :items="workList" :limit="2" title="Featured work" />
   </div>
 </template>

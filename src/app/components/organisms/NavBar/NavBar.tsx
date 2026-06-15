@@ -17,17 +17,22 @@ export default defineComponent({
   setup() {
     return () => (
       <header class="nav-bar">
-        <div class="nav-bar__inner container">
-          <RouterLink class="nav-bar__brand" to="/">
-            {profile.name}
-          </RouterLink>
-          <nav class="nav-bar__nav">
+        <RouterLink class="nav-bar__logo" to="/">
+          {profile.name}
+        </RouterLink>
+        <div class="nav-bar__right">
+          <nav class="nav-bar__links">
             {navLinks.map((link) => (
               <RouterLink key={link.to} class="nav-bar__link" to={link.to}>
                 {link.label}
               </RouterLink>
             ))}
           </nav>
+          {profile.links?.resume ? (
+            <a class="nav-bar__cta" href={profile.links.resume} target="_blank" rel="noopener noreferrer">
+              Resume ↗
+            </a>
+          ) : null}
           <ThemeToggle />
         </div>
       </header>

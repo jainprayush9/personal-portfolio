@@ -3,8 +3,20 @@
   "title": "Redesigning Onboarding for 2M Users",
   "company": "Acme Corp",
   "year": "2024",
-  "tags": ["Growth", "B2C", "0→1"],
-  "summary": "Rebuilt first-run experience for a consumer app with 2M MAU, cutting time-to-value and lifting activation by a third.",
+  "duration": "14 weeks",
+  "role": "Senior PM · Growth",
+  "team": "Design · Engineering · Data",
+  "tags": [
+    "Growth",
+    "B2C",
+    "0→1"
+  ],
+  "summary": "Rebuilt the first-run experience for a consumer app with 2M MAU, cutting time-to-value by 18 seconds and lifting week-1 activation by a third.",
+  "outcomes": [
+    "↑ 34% activation",
+    "−18s time-to-value",
+    "−27% support tickets"
+  ],
   "sections": [
     {
       "type": "text",
@@ -12,32 +24,121 @@
       "body": "New users dropped off within the first 90 seconds. Analytics showed 61% never completed setup, and support tickets clustered around unclear next steps. Leadership set a goal: improve week-1 activation without increasing acquisition spend."
     },
     {
-      "type": "metrics",
-      "items": ["61% setup abandonment", "4.2 min avg. time-to-first-action", "NPS 24 among new users"]
+      "type": "stat-grid",
+      "items": [
+        {
+          "val": "61%",
+          "label": "Setup abandonment"
+        },
+        {
+          "val": "4.2m",
+          "label": "Avg. time-to-first-action"
+        },
+        {
+          "val": "NPS 24",
+          "label": "Among new users"
+        },
+        {
+          "val": "#1",
+          "label": "Support ticket category"
+        }
+      ]
     },
     {
       "type": "text",
       "heading": "Discovery",
-      "body": "I ran 14 user interviews, mapped the existing funnel, and partnered with design on a jobs-to-be-done workshop. We found users wanted a fast win—not a tour of every feature. The old flow asked for permissions and profile data before demonstrating value."
+      "body": "I ran 14 user interviews, mapped the existing funnel, and partnered with design on a jobs-to-be-done workshop. We found users wanted a fast win — not a tour of every feature. The old flow asked for permissions and profile data before demonstrating any value."
     },
     {
-      "type": "image",
-      "src": "/images/case-one-flow.png",
-      "caption": "Before/after onboarding flow — value-first path highlighted in orange"
+      "type": "quote",
+      "text": "I just wanted to see if this actually does what I need. Instead it made me fill in my birthday.",
+      "cite": "User interview, session 3"
+    },
+    {
+      "type": "contrast",
+      "before": {
+        "title": "9 steps before first value",
+        "items": [
+          "Ask for notification permission",
+          "Ask for location access",
+          "Complete full profile",
+          "Select preferences (6 screens)",
+          "Finally — core action"
+        ]
+      },
+      "after": {
+        "title": "3 steps to 'aha moment'",
+        "items": [
+          "One-line name input",
+          "Single intent question",
+          "Core action — first value delivered"
+        ]
+      }
     },
     {
       "type": "text",
       "heading": "My Approach",
-      "body": "We reframed onboarding around a single 'aha' moment: completing one core action in under 60 seconds. I wrote a one-pager with success metrics, ran a phased rollout (5% → 25% → 100%), and built a dashboard tracking activation, retention, and support volume by cohort."
+      "body": "We reframed onboarding around a single 'aha moment': completing one core action in under 60 seconds. I wrote a one-pager with success metrics, ran a phased rollout (5% → 25% → 100%), and built a dashboard tracking activation, retention, and support volume by cohort."
+    },
+    {
+      "type": "callout",
+      "label": "North Star",
+      "body": "Time-to-first-meaningful-action under 60 seconds, measured from install. Every decision in the redesign was evaluated against this single metric."
+    },
+    {
+      "type": "steps",
+      "items": [
+        {
+          "title": "One-pager + success metrics",
+          "desc": "Defined activation as 'completes core action within 7 days of install' — aligned with eng, design, and data before a single wireframe was drawn."
+        },
+        {
+          "title": "Value-first flow redesign",
+          "desc": "Moved all data-collection steps post-activation. Led 3 rounds of usability testing with 5 users each. Iterated on copy, CTA placement, and progress indicators."
+        },
+        {
+          "title": "Phased rollout — 5% → 25% → 100%",
+          "desc": "Monitored activation, D7 retention, and support volume daily at each stage. Gate criteria required ≥15% activation lift before expanding."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/images/case-one-flow.png",
+      "caption": "Value-first path (right) reduced required steps from 9 to 3 before the core action"
     },
     {
       "type": "text",
       "heading": "Outcome",
-      "body": "Activation rose 34%, time-to-value dropped 18 seconds, and support tickets for 'getting started' fell 27%. The framework became the template for two additional product lines."
+      "body": "At full rollout, activation rose 34%, time-to-value dropped 18 seconds, and support tickets for 'getting started' fell 27%. Leadership adopted the value-first framework as the standard for two additional product lines."
     },
     {
-      "type": "metrics",
-      "items": ["↑ 34% activation", "−18s time-to-value", "−27% onboarding support tickets"]
+      "type": "stat-grid",
+      "variant": "green",
+      "items": [
+        {
+          "val": "+34%",
+          "label": "Week-1 activation rate"
+        },
+        {
+          "val": "−18s",
+          "label": "Time-to-first-action"
+        },
+        {
+          "val": "−27%",
+          "label": "Onboarding support tickets"
+        },
+        {
+          "val": "×2",
+          "label": "Product lines adopted framework"
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "muted",
+      "label": "What I'd do differently",
+      "body": "I'd instrument the 'aha moment' before starting the redesign — we were flying blind on the exact second users clicked their first meaningful action. Having that baseline from day one would've let us iterate faster in the rollout phase."
     }
   ]
 }

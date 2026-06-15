@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap');
 
 *,
 *::before,
@@ -16,8 +16,8 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-sans);
-  font-size: 17px;
-  line-height: 1.65;
+  font-size: 15px;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -36,24 +36,19 @@ img {
 }
 
 .page {
-  min-height: calc(100vh - 64px);
-  padding-top: 80px;
+  min-height: calc(100vh - 60px);
+  padding-top: 60px;
   padding-bottom: 120px;
-
-  @media (min-width: 768px) {
-    padding-top: 100px;
-    padding-bottom: 160px;
-  }
 }
 
 .container {
   margin: 0 auto;
-  max-width: 1000px;
-  padding: 0 24px;
+  max-width: 1100px;
+  padding: 0 48px;
   width: 100%;
 
-  @media (min-width: 768px) {
-    padding: 0 40px;
+  @media (max-width: 768px) {
+    padding: 0 24px;
   }
 }
 
