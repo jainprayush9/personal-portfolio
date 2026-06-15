@@ -2,7 +2,7 @@
   <div class="work-page container">
 
     <!-- ── Hero card ─────────────────────────────────────────────────── -->
-    <div class="wp-hero">
+    <div class="wp-hero reveal">
       <div class="wp-hero__left">
         <div class="wp-hero__badge">Professional Hub</div>
         <h1 class="wp-hero__name">{{ profile.name }}</h1>
@@ -33,7 +33,7 @@
       <main class="wp-main">
 
         <!-- About -->
-        <section class="wp-section">
+        <section class="wp-section reveal">
           <h2 class="wp-section__title">About</h2>
           <div class="wp-about">
             <div class="wp-about__bio">
@@ -55,7 +55,7 @@
         </section>
 
         <!-- Featured case study -->
-        <section class="wp-section" id="case-studies">
+        <section class="wp-section reveal" id="case-studies">
           <h2 class="wp-section__title">Featured case study</h2>
           <RouterLink :to="`/work/${workList[0].slug}`" class="wp-featured">
             <div class="wp-featured__meta">
@@ -79,7 +79,7 @@
         </section>
 
         <!-- Experience -->
-        <section class="wp-section">
+        <section class="wp-section reveal">
           <h2 class="wp-section__title">Experience</h2>
           <div class="wp-exp-list">
             <div v-for="(job, i) in workPage.experience" :key="i" class="wp-exp">
@@ -103,7 +103,7 @@
         </section>
 
         <!-- Skills -->
-        <section class="wp-section">
+        <section class="wp-section reveal">
           <h2 class="wp-section__title">Skills</h2>
           <div class="wp-skills">
             <div v-for="(group, i) in workPage.skills" :key="i" class="wp-skill-group">
@@ -117,7 +117,7 @@
         </section>
 
         <!-- Recommendations -->
-        <section class="wp-section">
+        <section class="wp-section reveal">
           <h2 class="wp-section__title">Recommendations</h2>
           <div class="wp-recs">
             <div v-for="(rec, i) in workPage.recommendations" :key="i" class="wp-rec">
@@ -131,7 +131,7 @@
         </section>
 
         <!-- Education -->
-        <section class="wp-section">
+        <section class="wp-section reveal">
           <h2 class="wp-section__title">Education</h2>
           <div v-for="(edu, i) in workPage.education" :key="i" class="wp-edu">
             <div class="wp-edu__degree">{{ edu.degree }}</div>
@@ -171,9 +171,12 @@
 
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
+import { useReveal } from '../app/composables/useReveal'
 import profile from '../../data/profile.json'
 import workList from '../../data/work.json'
 import workPage from '../../data/work-page.json'
 import CaseStudyGrid from '../app/components/organisms/CaseStudyGrid/CaseStudyGrid'
 import './WorkPage.scss'
+
+useReveal()
 </script>

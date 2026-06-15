@@ -2,7 +2,11 @@
   <div class="app">
     <NavBar />
     <main class="page">
-      <RouterView />
+      <RouterView v-slot="{ Component }">
+        <Transition name="page" mode="out-in">
+          <component :is="Component" :key="$route.path" />
+        </Transition>
+      </RouterView>
     </main>
     <Footer :class="{ 'footer--sidebar': hasSidebar }" />
   </div>

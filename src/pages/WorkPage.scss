@@ -1,6 +1,38 @@
 // ── Work page shell ─────────────────────────────────────────────────────────
 .work-page {
   padding-top: 40px;
+
+  .reveal:nth-child(1) {
+    transition-delay: 0.05s;
+  }
+
+  .reveal:nth-child(2) {
+    transition-delay: 0.12s;
+  }
+
+  .wp-main .reveal:nth-child(1) {
+    transition-delay: 0.0s;
+  }
+
+  .wp-main .reveal:nth-child(2) {
+    transition-delay: 0.08s;
+  }
+
+  .wp-main .reveal:nth-child(3) {
+    transition-delay: 0.14s;
+  }
+
+  .wp-main .reveal:nth-child(4) {
+    transition-delay: 0.20s;
+  }
+
+  .wp-main .reveal:nth-child(5) {
+    transition-delay: 0.26s;
+  }
+
+  .wp-main .reveal:nth-child(6) {
+    transition-delay: 0.32s;
+  }
 }
 
 // ── Hero card ────────────────────────────────────────────────────────────────
@@ -39,7 +71,9 @@
     color: var(--color-text);
     margin-bottom: 4px;
 
-    span { color: var(--color-text-muted); }
+    span {
+      color: var(--color-text-muted);
+    }
   }
 
   &__title {
@@ -56,7 +90,9 @@
     line-height: 1.6;
   }
 
-  &__dot { color: var(--color-text-faint); }
+  &__dot {
+    color: var(--color-text-faint);
+  }
 
   &__location {
     font-size: 12.5px;
@@ -83,7 +119,9 @@
       color: #fff;
       border: 1px solid var(--color-accent);
 
-      &:hover { opacity: 0.88; }
+      &:hover {
+        opacity: 0.88;
+      }
     }
 
     &--ghost {
@@ -91,7 +129,10 @@
       color: var(--color-text);
       border: 1px solid var(--color-border);
 
-      &:hover { border-color: var(--color-border-md); background: var(--color-surface-2); }
+      &:hover {
+        border-color: var(--color-border-md);
+        background: var(--color-surface-2);
+      }
     }
   }
 
@@ -103,7 +144,9 @@
     border: 1px solid var(--color-border);
     background: var(--color-surface-2);
 
-    @media (max-width: 640px) { display: none; }
+    @media (max-width: 640px) {
+      display: none;
+    }
   }
 }
 
@@ -162,7 +205,11 @@
     margin-bottom: 10px;
   }
 
-  ul { list-style: none; padding: 0; }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
   li {
     font-size: 13.5px;
     color: var(--color-text-muted);
@@ -190,7 +237,9 @@
   padding: 22px 24px;
   transition: border-color 0.2s;
 
-  &:hover { border-color: var(--color-accent); }
+  &:hover {
+    border-color: var(--color-accent);
+  }
 
   &__meta {
     display: flex;
@@ -198,7 +247,8 @@
     margin-bottom: 8px;
   }
 
-  &__badge, &__cat {
+  &__badge,
+  &__cat {
     font-size: 10.5px;
     font-weight: 600;
     letter-spacing: 0.12em;
@@ -206,7 +256,9 @@
     color: var(--color-accent);
   }
 
-  &__cat { color: var(--color-text-muted); }
+  &__cat {
+    color: var(--color-text-muted);
+  }
 
   &__title {
     font-size: 15px;
@@ -247,12 +299,18 @@
     color: var(--color-accent);
     font-weight: 500;
 
-    &:hover { text-decoration: underline; }
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
 // ── Experience ───────────────────────────────────────────────────────────────
-.wp-exp-list { display: flex; flex-direction: column; gap: 12px; }
+.wp-exp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 
 .wp-exp {
   display: flex;
@@ -274,7 +332,10 @@
     flex-shrink: 0;
   }
 
-  &__body { flex: 1; min-width: 0; }
+  &__body {
+    flex: 1;
+    min-width: 0;
+  }
 
   &__top {
     display: flex;
@@ -283,7 +344,9 @@
     gap: 12px;
     margin-bottom: 10px;
 
-    @media (max-width: 560px) { flex-direction: column; }
+    @media (max-width: 560px) {
+      flex-direction: column;
+    }
   }
 
   &__role {
@@ -293,7 +356,8 @@
     margin-bottom: 2px;
   }
 
-  &__meta, &__dur {
+  &__meta,
+  &__dur {
     font-size: 12px;
     color: var(--color-text-muted);
   }
@@ -333,7 +397,9 @@
 .wp-skill-group {
   padding: 18px 20px;
 
-  & + & { border-top: 1px solid var(--color-border); }
+  &+& {
+    border-top: 1px solid var(--color-border);
+  }
 
   &__cat {
     font-size: 10.5px;
@@ -367,11 +433,18 @@
   cursor: default;
   transition: border-color 0.2s, color 0.2s;
 
-  &:hover { border-color: var(--color-accent); color: var(--color-accent); }
+  &:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
 }
 
 // ── Recommendations ──────────────────────────────────────────────────────────
-.wp-recs { display: flex; flex-direction: column; gap: 12px; }
+.wp-recs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 
 .wp-rec {
   background: var(--color-surface);
@@ -386,7 +459,11 @@
     margin-bottom: 14px;
   }
 
-  &__attr { display: flex; flex-direction: column; gap: 2px; }
+  &__attr {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
 
   &__name {
     font-size: 13px;
@@ -470,7 +547,10 @@
 
     &--accent {
       color: var(--color-accent);
-      &:hover { text-decoration: underline; }
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
@@ -484,7 +564,9 @@
     font-size: 13px;
     color: var(--color-accent);
 
-    &:hover { text-decoration: underline; }
+    &:hover {
+      text-decoration: underline;
+    }
 
     &:not(:last-child)::after {
       content: ' ·';
