@@ -5,9 +5,9 @@ import ThemeToggle from '../../atoms/ThemeToggle/ThemeToggle.vue'
 import './NavBar.scss'
 
 const navLinks = [
-  { label: 'Home', to: '/' },
-  { label: 'Work', to: '/work' },
-  { label: 'About', to: '/about' },
+  { label: 'CS', to: '/work' },
+  { label: 'Work', to: '/resume' },
+  { label: 'Blogs', to: '/blogs' },
   { label: 'Contact', to: '/contact' },
 ]
 
@@ -28,11 +28,9 @@ export default defineComponent({
               </RouterLink>
             ))}
           </nav>
-          {profile.links?.resume ? (
-            <a class="nav-bar__cta" href={profile.links.resume} target="_blank" rel="noopener noreferrer">
-              Resume ↗
-            </a>
-          ) : null}
+          <RouterLink class="nav-bar__link nav-bar__link--resume" to="/resume">
+            Resume
+          </RouterLink>
           <ThemeToggle />
         </div>
       </header>

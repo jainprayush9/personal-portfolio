@@ -1,0 +1,494 @@
+// ── Work page shell ─────────────────────────────────────────────────────────
+.work-page {
+  padding-top: 40px;
+}
+
+// ── Hero card ────────────────────────────────────────────────────────────────
+.wp-hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 36px 40px;
+  margin-bottom: 40px;
+  box-shadow: var(--shadow-sm);
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  &__badge {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 10px;
+  }
+
+  &__name {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--color-text);
+    margin-bottom: 4px;
+
+    span { color: var(--color-text-muted); }
+  }
+
+  &__title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-accent);
+    margin-bottom: 10px;
+  }
+
+  &__specs {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin-bottom: 6px;
+    line-height: 1.6;
+  }
+
+  &__dot { color: var(--color-text-faint); }
+
+  &__location {
+    font-size: 12.5px;
+    color: var(--color-text-faint);
+    margin-bottom: 20px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  &__btn {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 18px;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s;
+    cursor: pointer;
+
+    &--primary {
+      background: var(--color-accent);
+      color: #fff;
+      border: 1px solid var(--color-accent);
+
+      &:hover { opacity: 0.88; }
+    }
+
+    &--ghost {
+      background: transparent;
+      color: var(--color-text);
+      border: 1px solid var(--color-border);
+
+      &:hover { border-color: var(--color-border-md); background: var(--color-surface-2); }
+    }
+  }
+
+  &__avatar {
+    width: 120px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    background: var(--color-surface-2);
+
+    @media (max-width: 640px) { display: none; }
+  }
+}
+
+// ── Body layout ──────────────────────────────────────────────────────────────
+.wp-body {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 32px;
+  align-items: start;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ── Sections ─────────────────────────────────────────────────────────────────
+.wp-section {
+  margin-bottom: 48px;
+
+  &__title {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--color-accent);
+    letter-spacing: -0.01em;
+    margin-bottom: 18px;
+  }
+}
+
+// ── About ────────────────────────────────────────────────────────────────────
+.wp-about {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 22px 24px;
+
+  &__bio p {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    margin-bottom: 18px;
+  }
+
+  &__group {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-border);
+  }
+
+  &__label {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 10px;
+  }
+
+  ul { list-style: none; padding: 0; }
+  li {
+    font-size: 13.5px;
+    color: var(--color-text-muted);
+    padding: 5px 0;
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.6;
+
+    &::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: 700;
+    }
+  }
+}
+
+// ── Featured CS ──────────────────────────────────────────────────────────────
+.wp-featured {
+  display: block;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 22px 24px;
+  transition: border-color 0.2s;
+
+  &:hover { border-color: var(--color-accent); }
+
+  &__meta {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  &__badge, &__cat {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  &__cat { color: var(--color-text-muted); }
+
+  &__title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  &__metrics {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+
+  &__metric {
+    font-size: 12px;
+    padding: 4px 10px;
+    background: var(--color-accent-bg);
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent-border);
+    border-radius: var(--radius-sm);
+  }
+
+  &__cta {
+    font-size: 13px;
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+}
+
+.wp-all-cs {
+  margin-top: 12px;
+
+  &__link {
+    font-size: 13px;
+    color: var(--color-accent);
+    font-weight: 500;
+
+    &:hover { text-decoration: underline; }
+  }
+}
+
+// ── Experience ───────────────────────────────────────────────────────────────
+.wp-exp-list { display: flex; flex-direction: column; gap: 12px; }
+
+.wp-exp {
+  display: flex;
+  gap: 16px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+
+  &__logo {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  &__body { flex: 1; min-width: 0; }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
+
+    @media (max-width: 560px) { flex-direction: column; }
+  }
+
+  &__role {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 2px;
+  }
+
+  &__meta, &__dur {
+    font-size: 12px;
+    color: var(--color-text-muted);
+  }
+
+  &__bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      font-size: 13px;
+      color: var(--color-text-muted);
+      padding: 4px 0;
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.55;
+
+      &::before {
+        content: '·';
+        position: absolute;
+        left: 0;
+        color: var(--color-accent);
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+// ── Skills ───────────────────────────────────────────────────────────────────
+.wp-skills {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.wp-skill-group {
+  padding: 18px 20px;
+
+  & + & { border-top: 1px solid var(--color-border); }
+
+  &__cat {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 2px;
+  }
+
+  &__desc {
+    font-size: 12px;
+    color: var(--color-text-faint);
+    margin-bottom: 10px;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+}
+
+.wp-skill-tag {
+  font-size: 12.5px;
+  padding: 5px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text);
+  background: var(--color-surface-2);
+  cursor: default;
+  transition: border-color 0.2s, color 0.2s;
+
+  &:hover { border-color: var(--color-accent); color: var(--color-accent); }
+}
+
+// ── Recommendations ──────────────────────────────────────────────────────────
+.wp-recs { display: flex; flex-direction: column; gap: 12px; }
+
+.wp-rec {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 22px 24px;
+
+  &__quote {
+    font-size: 13.5px;
+    color: var(--color-text-muted);
+    line-height: 1.75;
+    margin-bottom: 14px;
+  }
+
+  &__attr { display: flex; flex-direction: column; gap: 2px; }
+
+  &__name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-accent);
+  }
+
+  &__title {
+    font-size: 12px;
+    color: var(--color-text-faint);
+  }
+}
+
+// ── Education ────────────────────────────────────────────────────────────────
+.wp-edu {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-bottom: 8px;
+
+  &__degree {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  &__school {
+    font-size: 12.5px;
+    color: var(--color-text-muted);
+    margin-top: 2px;
+  }
+}
+
+// ── Sidebar ──────────────────────────────────────────────────────────────────
+.wp-sidebar {
+  position: sticky;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  &__card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 16px 18px;
+  }
+
+  &__label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 8px;
+  }
+
+  &__desc {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  &__field {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-faint);
+    margin-top: 10px;
+    margin-bottom: 2px;
+  }
+
+  &__val {
+    font-size: 13px;
+    color: var(--color-text);
+    display: block;
+    word-break: break-all;
+
+    &--accent {
+      color: var(--color-accent);
+      &:hover { text-decoration: underline; }
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 10px;
+  }
+
+  &__slink {
+    font-size: 13px;
+    color: var(--color-accent);
+
+    &:hover { text-decoration: underline; }
+
+    &:not(:last-child)::after {
+      content: ' ·';
+      color: var(--color-text-faint);
+    }
+  }
+}

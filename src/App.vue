@@ -1,15 +1,10 @@
 <template>
   <div class="app">
-    <template v-if="isCaseStudy">
+    <NavBar />
+    <main class="page">
       <RouterView />
-    </template>
-    <template v-else>
-      <NavBar />
-      <main class="page">
-        <RouterView />
-      </main>
-      <Footer />
-    </template>
+    </main>
+    <Footer :class="{ 'footer--sidebar': hasSidebar }" />
   </div>
 </template>
 
@@ -20,8 +15,7 @@ import NavBar from './app/components/organisms/NavBar/NavBar'
 import Footer from './app/components/organisms/Footer/Footer'
 
 const route = useRoute()
-const isCaseStudy = computed(() => route.name === undefined
-  ? false
-  : String(route.path).startsWith('/work/') && route.params.slug !== undefined
+const hasSidebar = computed(() =>
+  route.path.startsWith('/work/') && !!route.params.slug
 )
 </script>

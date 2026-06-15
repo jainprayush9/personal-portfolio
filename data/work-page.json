@@ -1,0 +1,80 @@
+{
+  "specializations": ["0→1 launches", "Growth", "B2C", "Data-informed design"],
+  "about": {
+    "bio": "I'm Deepika Kukreja — a Product Manager with X years shipping user-centred products across B2C, growth, and platform teams. I work best when teams trust PM judgment on problem framing, when design and engineering share a crisp bet, and when we can point to metrics that moved after launch.",
+    "whatIBring": [
+      "Full lifecycle ownership — strategy, roadmaps, PRDs, wireframes, and sprint leadership",
+      "Discovery through usability testing, user feedback, and analytics (SQL, Mixpanel, GA)",
+      "Accountability for outcomes, not output — crisp bets and measurable launches"
+    ],
+    "domains": [
+      "0→1 product launches and growth loops at consumer scale",
+      "Data-informed experimentation — A/B tests, funnel analysis, cohort tracking",
+      "Cross-functional delivery across eng, design, data, and marketing"
+    ]
+  },
+  "experience": [
+    {
+      "company": "Acme Corp",
+      "initials": "AC",
+      "color": "#C9440A",
+      "role": "Senior Product Manager",
+      "location": "San Francisco, CA",
+      "duration": "Jan 2023 – Present",
+      "bullets": [
+        "Redesigned onboarding for 2M+ users — activation up 34%, time-to-value down 18s",
+        "Led a 5-person squad (eng + design + data) to ship 3 major releases in 6 months",
+        "Defined north-star metric and instrumented cohort dashboards tracking retention by day-7/30"
+      ]
+    },
+    {
+      "company": "Nova Health",
+      "initials": "NH",
+      "color": "#1D4ED8",
+      "role": "Product Manager",
+      "location": "Remote",
+      "duration": "Jun 2021 – Dec 2022",
+      "bullets": [
+        "Built an enterprise feature-adoption platform — 41% increase in activation, NPS +12 pts",
+        "Ran 12 discovery interviews, 4 usability tests, and 2 survey rounds to define MVP scope",
+        "Partnered with sales to create self-serve onboarding that cut support tickets by 30%"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": "Product & Strategy",
+      "desc": "Discovery, roadmaps, growth loops, and stakeholder alignment",
+      "tags": ["Product Strategy", "Roadmapping", "PRDs", "User Research", "0→1 Launches", "Stakeholder Management", "OKRs & Goal-setting"]
+    },
+    {
+      "category": "Data & Experimentation",
+      "desc": "Analytics, A/B testing, funnels, and measured bets",
+      "tags": ["SQL", "Mixpanel", "Google Analytics", "A/B Testing", "Cohort Analysis", "Funnel Optimisation"]
+    },
+    {
+      "category": "Design & Delivery",
+      "desc": "Craft, usability, and cross-functional shipping",
+      "tags": ["UX Wireframing", "Figma", "Usability Testing", "Cross-functional Leadership", "Sprint Planning", "Agile / Scrum"]
+    }
+  ],
+  "recommendations": [
+    {
+      "quote": "Deepika has an exceptional ability to distil complex problems into crisp product bets. She brings together data, user empathy, and engineering constraints in a way that makes the team feel aligned and confident before a single line of code is written.",
+      "name": "— Placeholder Name",
+      "title": "Engineering Manager · Acme Corp"
+    },
+    {
+      "quote": "Working with Deepika on the onboarding redesign was one of the most structured and impactful engagements I've been part of. She had a clear north star, held the team accountable to outcomes, and knew when to cut scope without losing ambition.",
+      "name": "— Placeholder Name",
+      "title": "Senior Designer · Nova Health"
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.Tech / MBA — Placeholder",
+      "school": "University Name",
+      "year": "20XX"
+    }
+  ]
+}
