@@ -14,8 +14,9 @@
 
   &__media {
     aspect-ratio: 16 / 9;
-    background: var(--color-bg);
+    background: linear-gradient(135deg, var(--color-surface-2) 0%, color-mix(in srgb, var(--color-accent) 8%, var(--color-surface)) 100%);
     overflow: hidden;
+    position: relative;
   }
 
   &__image {

@@ -4,17 +4,31 @@
     "title": "Redesigning Onboarding for 2M Users",
     "company": "Acme Corp",
     "year": "2024",
-    "tags": ["Growth", "0→1", "B2C"],
-    "thumbnail": "/images/case-one.png",
-    "metrics": ["↑ 34% activation", "−18s time-to-value"]
+    "tags": [
+      "Growth",
+      "0→1",
+      "B2C"
+    ],
+    "thumbnail": "/images/case-one.svg",
+    "metrics": [
+      "↑ 34% activation",
+      "−18s time-to-value"
+    ]
   },
   {
     "slug": "case-two",
     "title": "Enterprise Feature Adoption Platform",
     "company": "Nova Health",
     "year": "2023",
-    "tags": ["B2B", "Platform", "Research"],
-    "thumbnail": "/images/case-two.png",
-    "metrics": ["↑ 41% feature adoption", "NPS +12 pts"]
+    "tags": [
+      "B2B",
+      "Platform",
+      "Research"
+    ],
+    "thumbnail": "/images/case-two.svg",
+    "metrics": [
+      "↑ 41% feature adoption",
+      "NPS +12 pts"
+    ]
   }
 ]

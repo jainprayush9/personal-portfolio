@@ -23,11 +23,15 @@ export default defineComponent({
     return () => (
       <RouterLink class="case-card" to={`/work/${props.item.slug}`}>
         <div class="case-card__media">
-          <img
-            alt={`${props.item.title} thumbnail`}
-            class="case-card__image"
-            src={props.item.thumbnail}
-          />
+          {props.item.thumbnail
+            ? <img
+              alt={`${props.item.title} thumbnail`}
+              class="case-card__image"
+              src={props.item.thumbnail}
+              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
+            />
+            : null
+          }
         </div>
         <div class="case-card__body">
           <div class="case-card__meta">

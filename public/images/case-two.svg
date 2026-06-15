@@ -1,0 +1,143 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F8FAFB"/>
+      <stop offset="100%" style="stop-color:#EDF2F8"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#C9440A"/>
+      <stop offset="100%" style="stop-color:#E8621A;stop-opacity:0.7"/>
+    </linearGradient>
+    <linearGradient id="barFaded" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#C9440A;stop-opacity:0.25"/>
+      <stop offset="100%" style="stop-color:#C9440A;stop-opacity:0.08"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#C9440A;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#C9440A"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="card-shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#1D4ED820"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg2)"/>
+
+  <!-- Subtle horizontal rules -->
+  <g stroke="#D8E4EE" stroke-width="0.5" opacity="0.8">
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+  </g>
+
+  <!-- Label -->
+  <text x="40" y="48" font-size="10" font-weight="600" letter-spacing="2" fill="#1D4ED8">B2B · PLATFORM · RESEARCH</text>
+  <text x="40" y="76" font-size="22" font-weight="700" fill="#0F1A2E" letter-spacing="-0.5">Feature Adoption Platform</text>
+
+  <!-- Dashboard card -->
+  <rect x="40" y="100" width="460" height="220" rx="12" fill="#fff" stroke="#CBD5E1" stroke-width="1" filter="url(#card-shadow)"/>
+
+  <!-- Dashboard header -->
+  <rect x="40" y="100" width="460" height="36" rx="12" fill="#F8FAFC"/>
+  <rect x="40" y="124" width="460" height="12" fill="#F8FAFC"/>
+  <circle cx="62" cy="118" r="5" fill="#EF4444" opacity="0.6"/>
+  <circle cx="78" cy="118" r="5" fill="#F59E0B" opacity="0.6"/>
+  <circle cx="94" cy="118" r="5" fill="#10B981" opacity="0.6"/>
+  <text x="118" y="122" font-size="10" fill="#64748B" font-weight="500">Feature Adoption Dashboard</text>
+  <text x="440" y="122" text-anchor="end" font-size="9" fill="#94A3B8">Q4 2023</text>
+
+  <!-- Chart area -->
+  <text x="60" y="158" font-size="9" fill="#94A3B8" font-weight="500" letter-spacing="1">ADOPTION RATE %</text>
+
+  <!-- Y axis labels -->
+  <text x="56" y="178" text-anchor="end" font-size="8" fill="#CBD5E1">80</text>
+  <text x="56" y="208" text-anchor="end" font-size="8" fill="#CBD5E1">60</text>
+  <text x="56" y="238" text-anchor="end" font-size="8" fill="#CBD5E1">40</text>
+  <text x="56" y="268" text-anchor="end" font-size="8" fill="#CBD5E1">20</text>
+  <text x="56" y="298" text-anchor="end" font-size="8" fill="#CBD5E1">0</text>
+
+  <!-- Grid lines -->
+  <g stroke="#EEF2F7" stroke-width="0.8">
+    <line x1="62" y1="174" x2="488" y2="174"/>
+    <line x1="62" y1="204" x2="488" y2="204"/>
+    <line x1="62" y1="234" x2="488" y2="234"/>
+    <line x1="62" y1="264" x2="488" y2="264"/>
+    <line x1="62" y1="294" x2="488" y2="294"/>
+  </g>
+
+  <!-- Bars (monthly adoption) -->
+  <!-- Before intervention -->
+  <rect x="72"  y="274" width="26" height="20" rx="3" fill="url(#barFaded)"/>
+  <rect x="106" y="268" width="26" height="26" rx="3" fill="url(#barFaded)"/>
+  <rect x="140" y="264" width="26" height="30" rx="3" fill="url(#barFaded)"/>
+  <rect x="174" y="258" width="26" height="36" rx="3" fill="url(#barFaded)"/>
+
+  <!-- After intervention (accent) -->
+  <rect x="208" y="244" width="26" height="50" rx="3" fill="url(#bar)" opacity="0.7"/>
+  <rect x="242" y="224" width="26" height="70" rx="3" fill="url(#bar)" opacity="0.8"/>
+  <rect x="276" y="204" width="26" height="90" rx="3" fill="url(#bar)" opacity="0.9"/>
+  <rect x="310" y="186" width="26" height="108" rx="3" fill="url(#bar)"/>
+  <rect x="344" y="179" width="26" height="115" rx="3" fill="url(#bar)" filter="url(#glow)"/>
+  <rect x="378" y="175" width="26" height="119" rx="3" fill="url(#bar)"/>
+  <rect x="412" y="174" width="26" height="120" rx="3" fill="url(#bar)"/>
+  <rect x="446" y="174" width="26" height="120" rx="3" fill="url(#bar)"/>
+
+  <!-- Trend line over bars -->
+  <polyline
+    points="85,284 119,278 153,274 187,268 221,254 255,234 289,214 323,196 357,184 391,180 425,175 459,175"
+    fill="none" stroke="url(#line)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- End dot -->
+  <circle cx="459" cy="175" r="4" fill="#C9440A" filter="url(#glow)"/>
+
+  <!-- Intervention marker -->
+  <line x1="208" y1="148" x2="208" y2="300" stroke="#C9440A" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+  <rect x="168" y="144" width="80" height="18" rx="4" fill="#C9440A"/>
+  <text x="208" y="156" text-anchor="middle" font-size="9" font-weight="600" fill="#fff">Platform launch</text>
+
+  <!-- X axis labels -->
+  <text x="85"  y="308" text-anchor="middle" font-size="8" fill="#CBD5E1">Jun</text>
+  <text x="153" y="308" text-anchor="middle" font-size="8" fill="#CBD5E1">Aug</text>
+  <text x="221" y="308" text-anchor="middle" font-size="8" fill="#CBD5E1">Oct</text>
+  <text x="289" y="308" text-anchor="middle" font-size="8" fill="#CBD5E1">Dec</text>
+  <text x="357" y="308" text-anchor="middle" font-size="8" fill="#CBD5E1">Feb</text>
+  <text x="425" y="308" text-anchor="middle" font-size="8" fill="#CBD5E1">Apr</text>
+
+  <!-- Right panel: stat cards -->
+  <rect x="520" y="100" width="240" height="100" rx="12" fill="#fff" stroke="#CBD5E1" stroke-width="1" filter="url(#card-shadow)"/>
+  <text x="540" y="128" font-size="10" font-weight="600" letter-spacing="1" fill="#94A3B8">FEATURE ADOPTION</text>
+  <text x="540" y="165" font-size="38" font-weight="800" fill="#C9440A" letter-spacing="-2">+41%</text>
+  <text x="540" y="186" font-size="11" fill="#64748B">activation rate increase</text>
+
+  <rect x="520" y="216" width="115" height="90" rx="12" fill="#fff" stroke="#CBD5E1" stroke-width="1" filter="url(#card-shadow)"/>
+  <text x="540" y="242" font-size="9" font-weight="600" letter-spacing="1" fill="#94A3B8">NPS DELTA</text>
+  <text x="540" y="278" font-size="32" font-weight="800" fill="#0F1A2E" letter-spacing="-1">+12</text>
+  <text x="540" y="296" font-size="10" fill="#64748B">pts gained</text>
+
+  <rect x="645" y="216" width="115" height="90" rx="12" fill="#C9440A" filter="url(#card-shadow)"/>
+  <text x="703" y="242" text-anchor="middle" font-size="9" font-weight="600" letter-spacing="1" fill="rgba(255,255,255,0.7)">SUPPORT</text>
+  <text x="703" y="278" text-anchor="middle" font-size="32" font-weight="800" fill="#fff" letter-spacing="-1">−30%</text>
+  <text x="703" y="296" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.85)">tickets</text>
+
+  <!-- Research callout -->
+  <rect x="520" y="322" width="240" height="64" rx="12" fill="#F0F4FF" stroke="#C7D7FB" stroke-width="1"/>
+  <text x="540" y="347" font-size="9" font-weight="700" letter-spacing="1" fill="#1D4ED8">RESEARCH FOUNDATION</text>
+  <text x="540" y="364" font-size="11" fill="#334155">12 interviews · 4 usability tests</text>
+  <text x="540" y="379" font-size="11" fill="#334155">2 surveys · MVP in 6 weeks</text>
+
+  <!-- Bottom tags -->
+  <rect x="40" y="402" width="110" height="22" rx="11" fill="#EEF2FF" stroke="#C7D7FB" stroke-width="1"/>
+  <text x="95" y="417" text-anchor="middle" font-size="10" font-weight="600" fill="#1D4ED8">Nova Health · 2023</text>
+
+  <rect x="162" y="402" width="80" height="22" rx="11" fill="#EEF2FF" stroke="#C7D7FB" stroke-width="1"/>
+  <text x="202" y="417" text-anchor="middle" font-size="10" font-weight="600" fill="#1D4ED8">B2B SaaS</text>
+
+  <rect x="254" y="402" width="90" height="22" rx="11" fill="#EEF2FF" stroke="#C7D7FB" stroke-width="1"/>
+  <text x="299" y="417" text-anchor="middle" font-size="10" font-weight="600" fill="#1D4ED8">Enterprise</text>
+</svg>
