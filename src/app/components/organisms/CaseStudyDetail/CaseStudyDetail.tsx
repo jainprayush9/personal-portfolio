@@ -51,6 +51,29 @@ interface StepsSection {
   items: Array<{ title: string; desc: string }>
 }
 
+interface ChartSection {
+  type: 'chart'
+  label: string
+  source?: string
+  bars: Array<{ label: string; value: string; color: 'green' | 'orange' | 'red' | 'blue' | 'muted'; percent: number }>
+}
+
+interface TableSection {
+  type: 'table'
+  cols: string[]
+  rows: Array<{ cells: string[]; riskCol?: number; risk?: 'high' | 'medium' | 'low' }>
+}
+
+interface TimelineSection {
+  type: 'timeline'
+  items: Array<{ date: string; heading: string; body: string; badge?: string; badgeColor?: 'green' | 'orange' | 'blue'; status: 'done' | 'now' | 'future' }>
+}
+
+interface PillarsSection {
+  type: 'pillars'
+  items: Array<{ num: string; title: string; desc: string }>
+}
+
 type CaseSection =
   | TextSection
   | ImageSection
@@ -60,6 +83,10 @@ type CaseSection =
   | CalloutSection
   | ContrastSection
   | StepsSection
+  | ChartSection
+  | TableSection
+  | TimelineSection
+  | PillarsSection
 
 export interface CaseStudy {
   slug: string
@@ -96,6 +123,7 @@ export default defineComponent({
 
     const activeSection = ref<string>('cs-cover')
     const progressWidth = ref('0%')
+    const barsAnimated = ref(false)
     let scrollHandler: (() => void) | null = null
 
     onMounted(() => {
@@ -116,6 +144,7 @@ export default defineComponent({
 
       window.addEventListener('scroll', scrollHandler, { passive: true })
       scrollHandler()
+      requestAnimationFrame(() => { barsAnimated.value = true })
     })
 
     onUnmounted(() => {
@@ -219,6 +248,88 @@ export default defineComponent({
                   <div class="csd-step__title">{item.title}</div>
                   <div class="csd-step__desc">{item.desc}</div>
                 </div>
+              </div>
+            ))}
+          </div>
+        )
+      }
+
+      if (section.type === 'chart') {
+        return (
+          <div key={index} class="csd-chart">
+            <div class="csd-chart__label">{section.label}</div>
+            {section.bars.map((bar, i) => (
+              <div key={i} class="csd-chart__row">
+                <div class="csd-chart__yr">{bar.label}</div>
+                <div class="csd-chart__track">
+                  <div
+                    class={`csd-chart__fill csd-chart__fill--${bar.color}`}
+                    style={{ width: barsAnimated.value ? `${bar.percent}%` : '0%' }}
+                  >
+                    {bar.percent > 15 ? <span class="csd-chart__num">{bar.value}</span> : null}
+                  </div>
+                  {bar.percent <= 15 ? <span class="csd-chart__num-out">{bar.value}</span> : null}
+                </div>
+              </div>
+            ))}
+            {section.source ? <p class="csd-chart__source">{section.source}</p> : null}
+          </div>
+        )
+      }
+
+      if (section.type === 'table') {
+        return (
+          <div key={index} class="csd-table-wrap">
+            <table class="csd-table">
+              <thead>
+                <tr>{section.cols.map(c => <th key={c}>{c}</th>)}</tr>
+              </thead>
+              <tbody>
+                {section.rows.map((row, ri) => (
+                  <tr key={ri}>
+                    {row.cells.map((cell, ci) => {
+                      if (row.riskCol === ci) {
+                        return <td key={ci}><span class={`csd-risk csd-risk--${row.risk || 'medium'}`}>{cell}</span></td>
+                      }
+                      return <td key={ci}>{cell}</td>
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )
+      }
+
+      if (section.type === 'timeline') {
+        return (
+          <div key={index} class="csd-timeline">
+            {section.items.map((item, ti) => (
+              <div key={ti} class={`csd-tl-row csd-tl-row--${item.status}`}>
+                <div class="csd-tl-date">{item.date}</div>
+                <div class="csd-tl-mid">
+                  <div class="csd-tl-dot" />
+                  {ti < section.items.length - 1 ? <div class="csd-tl-line" /> : null}
+                </div>
+                <div class="csd-tl-body">
+                  <div class="csd-tl-heading">{item.heading}</div>
+                  <p class="csd-tl-text">{item.body}</p>
+                  {item.badge ? <span class={`csd-tl-badge csd-tl-badge--${item.badgeColor || 'blue'}`}>{item.badge}</span> : null}
+                </div>
+              </div>
+            ))}
+          </div>
+        )
+      }
+
+      if (section.type === 'pillars') {
+        return (
+          <div key={index} class="csd-pillars">
+            {section.items.map((item, pi) => (
+              <div key={pi} class="csd-pillar">
+                <div class="csd-pillar__num">{item.num}</div>
+                <div class="csd-pillar__title">{item.title}</div>
+                <p class="csd-pillar__desc">{item.desc}</p>
               </div>
             ))}
           </div>

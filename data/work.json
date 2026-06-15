@@ -1,18 +1,18 @@
 [
   {
     "slug": "case-one",
-    "title": "Redesigning Onboarding for 2M Users",
-    "company": "Acme Corp",
-    "year": "2024",
+    "title": "Razor Vault — Privacy Gateway",
+    "company": "Razorpay · Outside PM",
+    "year": "2026",
     "tags": [
-      "Growth",
-      "0→1",
-      "B2C"
+      "Privacy",
+      "Fintech",
+      "B2B"
     ],
     "thumbnail": "/images/case-one.svg",
     "metrics": [
-      "↑ 34% activation",
-      "−18s time-to-value"
+      "₹400–500 Cr risk avoided",
+      "DPDP Act 2023 compliant"
     ]
   },
   {

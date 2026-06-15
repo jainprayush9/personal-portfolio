@@ -1,136 +1,347 @@
 {
   "slug": "case-one",
-  "title": "Redesigning Onboarding for 2M Users",
-  "company": "Acme Corp",
-  "year": "2024",
-  "duration": "14 weeks",
-  "role": "Senior PM · Growth",
-  "team": "Design · Engineering · Data",
+  "title": "Razor Vault",
+  "company": "Razorpay · Outside PM",
+  "year": "2026",
+  "duration": "18 months (proposed)",
+  "role": "PM Case Study · Privacy Infrastructure",
+  "team": "Engineering · Legal · Security · Operations",
   "tags": [
-    "Growth",
-    "B2C",
-    "0→1"
+    "Privacy",
+    "Fintech",
+    "B2B"
   ],
-  "summary": "Rebuilt the first-run experience for a consumer app with 2M MAU, cutting time-to-value by 18 seconds and lifting week-1 activation by a third.",
+  "summary": "A centralized privacy gateway proposed for Razorpay — moving from static role-based permissions to intent-based access control, built for the DPDP Act 2023 enforcement deadline and India's largest fintech IPO moment.",
   "outcomes": [
-    "↑ 34% activation",
-    "−18s time-to-value",
-    "−27% support tickets"
+    "₹400–500 Cr risk avoidance",
+    "DPDP Act 2023 compliant",
+    "₹30–50 Cr build · 10:1 ROI"
   ],
   "sections": [
     {
       "type": "text",
-      "heading": "The Problem",
-      "body": "New users dropped off within the first 90 seconds. Analytics showed 61% never completed setup, and support tickets clustered around unclear next steps. Leadership set a goal: improve week-1 activation without increasing acquisition spend."
+      "heading": "The Opportunity",
+      "body": "Razorpay isn't just a payment gateway — it is the infrastructure layer beneath 12 million merchants, from D2C brands to India's largest unicorns. Every checkout, every UPI transfer, every loan disbursed through Razorpay Capital leaves behind a trail of sensitive personal data. At this scale, data isn't a byproduct. It is the product. And the DPDP Act 2023 changes the rules — full penalty enforcement begins May 2027. That window is closing fast."
     },
     {
       "type": "stat-grid",
       "items": [
         {
-          "val": "61%",
-          "label": "Setup abandonment"
+          "val": "$180B",
+          "label": "Annualized Total Payment Volume"
         },
         {
-          "val": "4.2m",
-          "label": "Avg. time-to-first-action"
+          "val": "12M+",
+          "label": "Merchants onboarded across India & SEA"
         },
         {
-          "val": "NPS 24",
-          "label": "Among new users"
+          "val": "55%",
+          "label": "Market share of India's online payment gateways"
         },
         {
-          "val": "#1",
-          "label": "Support ticket category"
+          "val": "₹3,783 Cr",
+          "label": "Revenue FY2025 · 65% YoY growth"
         }
       ]
     },
     {
       "type": "text",
-      "heading": "Discovery",
-      "body": "I ran 14 user interviews, mapped the existing funnel, and partnered with design on a jobs-to-be-done workshop. We found users wanted a fast win — not a tour of every feature. The old flow asked for permissions and profile data before demonstrating any value."
+      "heading": "The Regulatory Catalyst",
+      "body": "India's Digital Personal Data Protection (DPDP) Act received Presidential assent on August 11, 2023 — the first comprehensive data protection law in India with real teeth. The Rules were notified on November 13, 2025. Full penalty enforcement begins May 13, 2027. Every month of delay is engineering capacity lost. The companies that treat DPDP as a legal checkbox will spend money and generate zero return. Razorpay can do something different."
+    },
+    {
+      "type": "timeline",
+      "items": [
+        {
+          "date": "Aug 2023",
+          "heading": "DPDP Act receives Presidential assent",
+          "body": "Legal framework established. Data fiduciaries formally put on notice. India joins the global data protection order alongside GDPR and CCPA.",
+          "badge": "Complete",
+          "badgeColor": "green",
+          "status": "done"
+        },
+        {
+          "date": "Nov 2025",
+          "heading": "DPDP Rules 2025 notified by MeitY",
+          "body": "Consent, breach notification timelines, Significant Data Fiduciary (SDF) obligations, and the Data Protection Board constitution — now operational.",
+          "badge": "Complete",
+          "badgeColor": "green",
+          "status": "done"
+        },
+        {
+          "date": "Jun 2026",
+          "heading": "The compliance build window — today",
+          "body": "Companies have a shrinking runway to implement 'reasonable security safeguards.' Every month of delay is a month of engineering time lost before the hard deadline.",
+          "badge": "~11 months remaining",
+          "badgeColor": "blue",
+          "status": "now"
+        },
+        {
+          "date": "May 2027",
+          "heading": "Full penalty enforcement begins",
+          "body": "Monetary sanctions become enforceable. Non-compliance at this point is no longer a risk — it's a certainty of loss. Up to ₹500 Cr in combined penalties per incident.",
+          "badge": "Up to ₹250 Cr · security failures",
+          "badgeColor": "orange",
+          "status": "future"
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "label": "DPDP Act — Maximum Penalty by Violation Type",
+      "source": "Sources: Fox Mandal DPDP Penalty Regime Analysis · EY DPDP Compliance Guide · DLA Piper Data Protection Laws of India",
+      "bars": [
+        {
+          "label": "Security safeguards",
+          "value": "₹250 Cr",
+          "color": "orange",
+          "percent": 100
+        },
+        {
+          "label": "Breach notification",
+          "value": "₹200 Cr",
+          "color": "orange",
+          "percent": 80
+        },
+        {
+          "label": "SDF non-compliance",
+          "value": "₹150 Cr",
+          "color": "orange",
+          "percent": 60
+        },
+        {
+          "label": "Other violations",
+          "value": "₹50 Cr",
+          "color": "muted",
+          "percent": 20
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "The Core Problem",
+      "body": "The danger isn't always an external hacker. At Razorpay's scale of ~4,000 employees, the highest-risk access points are internal. Every support agent who opens a customer record, every analyst running a SQL query, every engineer debugging a failed transaction — each is a potential exposure event. Not because they're malicious. Because the system gives them far more than they need, by default. This is the structural failure of static Role-Based Access Control (RBAC): it governs access at the door, not at the field."
+    },
+    {
+      "type": "table",
+      "cols": [
+        "Role",
+        "Task they need access for",
+        "PII currently visible",
+        "Exposure risk"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Support Agent",
+            "Verify transaction, resolve dispute",
+            "Full name, phone, email, bank account, transaction history",
+            "High"
+          ],
+          "riskCol": 3,
+          "risk": "high"
+        },
+        {
+          "cells": [
+            "Data Analyst",
+            "Build cohort reports, payment trends",
+            "Raw customer PII in query results, unmasked exports",
+            "High"
+          ],
+          "riskCol": 3,
+          "risk": "high"
+        },
+        {
+          "cells": [
+            "Backend Engineer",
+            "Debug failed transaction, fix pipeline",
+            "Full PII in logs, prod DB read access",
+            "High"
+          ],
+          "riskCol": 3,
+          "risk": "high"
+        },
+        {
+          "cells": [
+            "Sales / BD",
+            "Merchant onboarding, account verification",
+            "Business PAN, GST, bank details, owner contact",
+            "Medium"
+          ],
+          "riskCol": 3,
+          "risk": "medium"
+        },
+        {
+          "cells": [
+            "Finance Ops",
+            "Reconciliation, payout verification",
+            "Account numbers, settlement amounts, beneficiary names",
+            "Medium"
+          ],
+          "riskCol": 3,
+          "risk": "medium"
+        },
+        {
+          "cells": [
+            "Compliance Officer",
+            "Audit trails, regulatory reporting",
+            "Aggregated PII, masked by intent but audit-complete",
+            "Controlled"
+          ],
+          "riskCol": 3,
+          "risk": "low"
+        }
+      ]
     },
     {
       "type": "quote",
-      "text": "I just wanted to see if this actually does what I need. Instead it made me fill in my birthday.",
-      "cite": "User interview, session 3"
+      "text": "Role sprawl, static permissions in dynamic environments, and outdated roles that no longer reflect real-world responsibilities can all dilute RBAC's effectiveness. The solution is not better role hygiene — it is a more expressive access control model.",
+      "cite": "TrustLogix: Role-Based Access Control — The Complete Guide"
     },
     {
       "type": "contrast",
       "before": {
-        "title": "9 steps before first value",
+        "title": "Minimum compliance path",
         "items": [
-          "Ask for notification permission",
-          "Ask for location access",
-          "Complete full profile",
-          "Select preferences (6 screens)",
-          "Finally — core action"
+          "Update privacy policy",
+          "Run a one-time audit",
+          "Assign a DPO",
+          "Zero competitive differentiation",
+          "First breach undoes all of it"
         ]
       },
       "after": {
-        "title": "3 steps to 'aha moment'",
+        "title": "Razor Vault path",
         "items": [
-          "One-line name input",
-          "Single intent question",
-          "Core action — first value delivered"
+          "Privacy built into the data layer itself",
+          "Auditable and verifiable by design",
+          "Unlocks enterprise BFSI & healthcare merchants",
+          "Turns compliance into a product feature",
+          "Moat against competitors for 3–5 years"
         ]
       }
     },
     {
       "type": "text",
-      "heading": "My Approach",
-      "body": "We reframed onboarding around a single 'aha moment': completing one core action in under 60 seconds. I wrote a one-pager with success metrics, ran a phased rollout (5% → 25% → 100%), and built a dashboard tracking activation, retention, and support volume by cohort."
+      "heading": "The Solution — Razor Vault",
+      "body": "Razor Vault is a centralized privacy gateway for Razorpay's internal data infrastructure. It moves the company from static role-based permissions — where access is determined once, at role assignment — to intent-based access control, where every request for sensitive data must declare a purpose, is evaluated in real time against a policy engine, and returns only the minimum data required for that stated intent. A support agent, a data analyst, and an on-call engineer can all 'access customer data' — but never see the same data twice, because what they receive is shaped by what they declared they needed it for."
+    },
+    {
+      "type": "pillars",
+      "items": [
+        {
+          "num": "01",
+          "title": "Format-Preserving Encryption",
+          "desc": "PII encrypted at rest in a format that preserves operational utility. No system rewrites required — the data layer changes, everything on top stays the same."
+        },
+        {
+          "num": "02",
+          "title": "Dynamic Field-Level Masking",
+          "desc": "Access-time rendering of only the fields required for the declared intent. Same database, entirely different view per role and per stated purpose."
+        },
+        {
+          "num": "03",
+          "title": "Blind Indexing",
+          "desc": "Search functionality preserved without exposing raw PII. HMAC-based — the index carries no readable data but enables exact-match lookups."
+        }
+      ]
     },
     {
       "type": "callout",
-      "label": "North Star",
-      "body": "Time-to-first-meaningful-action under 60 seconds, measured from install. Every decision in the redesign was evaluated against this single metric."
+      "label": "The Strategic Insight",
+      "body": "The compliance moat is not a cost center — it's a sales motion. A verifiable, auditable privacy layer becomes the answer to every enterprise procurement questionnaire that currently blocks Razorpay from BFSI and healthcare accounts. Stripe and Adyen didn't build GDPR compliance to avoid fines. They built it to sell to European banks and hospitals. India's DPDP Act creates the identical unlock — but only for whoever moves first."
+    },
+    {
+      "type": "text",
+      "heading": "How It Works — User Experience",
+      "body": "When a support agent opens a dispute ticket, they declare intent: 'Resolve billing dispute.' The policy engine evaluates: this intent requires last 4 digits of payment method, transaction amount, and merchant name. The agent sees exactly those fields — nothing more. When the same agent escalates to an engineer for a technical investigation, the engineer declares: 'Debug payment failure.' The same customer record now shows a different set of fields shaped by a different intent. The database hasn't changed. The trust surface just became infinitely smaller."
     },
     {
       "type": "steps",
       "items": [
         {
-          "title": "One-pager + success metrics",
-          "desc": "Defined activation as 'completes core action within 7 days of install' — aligned with eng, design, and data before a single wireframe was drawn."
+          "title": "Data taxonomy & sensitivity classification",
+          "desc": "Map every PII field across Razorpay's systems into tiers: Critical (bank account, PAN), Sensitive (phone, email), Internal (transaction metadata). This becomes the vault's schema."
         },
         {
-          "title": "Value-first flow redesign",
-          "desc": "Moved all data-collection steps post-activation. Led 3 rounds of usability testing with 5 users each. Iterated on copy, CTA placement, and progress indicators."
+          "title": "Policy engine design",
+          "desc": "Define intent-to-field mappings: each valid business intent (dispute resolution, fraud investigation, merchant onboarding) maps to a specific field allowlist. Zero fields outside the allowlist are returned."
         },
         {
-          "title": "Phased rollout — 5% → 25% → 100%",
-          "desc": "Monitored activation, D7 retention, and support volume daily at each stage. Gate criteria required ≥15% activation lift before expanding."
+          "title": "Format-preserving encryption layer",
+          "desc": "Wrap the existing data store with FPE. Bank account 9876543210 becomes 4829103847 — same format, different value, fully reversible only by the vault service. No app rewrites."
+        },
+        {
+          "title": "Audit trail & break-glass protocol",
+          "desc": "Every data access is logged with: who, what intent, what fields returned, timestamp. Break-glass emergency access exists but creates an immutable audit event reviewable by compliance."
+        },
+        {
+          "title": "Enterprise compliance API surface",
+          "desc": "Expose a compliance API that generates instant audit reports for enterprise merchant procurement teams, regulators, and the Data Protection Board — turning compliance from internal cost to customer-facing feature."
         }
       ]
     },
     {
-      "type": "image",
-      "src": "/images/case-one-flow.png",
-      "caption": "Value-first path (right) reduced required steps from 9 to 3 before the core action"
+      "type": "text",
+      "heading": "Business Impact",
+      "body": "The build cost is estimated at ₹30–50 Cr over 18 months — roughly 1% of Razorpay's FY25 revenue. The risk avoidance is ₹400–500 Cr in potential DPDP penalties. But the real ROI is strategic: every BFSI and healthcare merchant that currently can't onboard a non-compliant payments vendor becomes accessible. That's a new enterprise segment, unlocked by a compliance investment."
     },
     {
-      "type": "text",
-      "heading": "Outcome",
-      "body": "At full rollout, activation rose 34%, time-to-value dropped 18 seconds, and support tickets for 'getting started' fell 27%. Leadership adopted the value-first framework as the standard for two additional product lines."
+      "type": "chart",
+      "label": "Razorpay Revenue Growth — FY21 to FY25",
+      "source": "Sources: Business Standard FY24 Report · Tracxn Company Profile · CoinLaw Razorpay Statistics 2026",
+      "bars": [
+        {
+          "label": "FY21",
+          "value": "₹820 Cr",
+          "color": "muted",
+          "percent": 9
+        },
+        {
+          "label": "FY22",
+          "value": "₹1,441 Cr",
+          "color": "muted",
+          "percent": 16
+        },
+        {
+          "label": "FY23",
+          "value": "₹2,293 Cr",
+          "color": "green",
+          "percent": 42
+        },
+        {
+          "label": "FY24",
+          "value": "₹2,501 Cr",
+          "color": "green",
+          "percent": 56
+        },
+        {
+          "label": "FY25",
+          "value": "₹3,783 Cr",
+          "color": "green",
+          "percent": 88
+        }
+      ]
     },
     {
       "type": "stat-grid",
       "variant": "green",
       "items": [
         {
-          "val": "+34%",
-          "label": "Week-1 activation rate"
+          "val": "₹400–500 Cr",
+          "label": "Total regulatory risk avoidance"
         },
         {
-          "val": "−18s",
-          "label": "Time-to-first-action"
+          "val": "10:1+",
+          "label": "ROI on ₹30–50 Cr build cost"
         },
         {
-          "val": "−27%",
-          "label": "Onboarding support tickets"
+          "val": "May 2027",
+          "label": "DPDP enforcement deadline — the hard clock"
         },
         {
-          "val": "×2",
-          "label": "Product lines adopted framework"
+          "val": "3–5 yr",
+          "label": "Competitive moat window vs. Indian payment peers"
         }
       ]
     },
@@ -138,7 +349,7 @@
       "type": "callout",
       "variant": "muted",
       "label": "What I'd do differently",
-      "body": "I'd instrument the 'aha moment' before starting the redesign — we were flying blind on the exact second users clicked their first meaningful action. Having that baseline from day one would've let us iterate faster in the rollout phase."
+      "body": "I'd start the data taxonomy work earlier, as a standalone zero-cost initiative before any engineering begins. Mapping every PII field and its sensitivity tier across all Razorpay services is the riskiest unknown in this proposal — it could take 2 months or 6 depending on how well internal APIs are documented. Starting there buys optionality on the build timeline."
     }
   ]
 }
